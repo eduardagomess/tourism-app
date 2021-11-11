@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "nome": "Beto Carrero World",
+    "foto": "http://soleviagenseturismo.com.br/wp-content/uploads/2018/03/2-BETO-CARRERO.jpg",
+    "cidade": "Penha",
+    "endereco": "Rod. Beto Carrero World - Praia de Armação do Itapocorói, Penha - SC, 88385-000",
+    "telefone": "(47) 3261-2222",
+    "horário": "09:00-21:00",
+    "site": "https://www.betocarrero.com.br/",
+    "ingressos": "R$ 129-189"
+  },
+  {
+    "id": 2,
+    "nome": "Palácio Cruz e Sousa",
+    "foto": "https://w8e8i3u2.stackpathcdn.com/wp-content/uploads/2018/04/Pal%C3%A1cio-Cruz-e-Sousa.jpg",
+    "cidade": "Florianópolis",
+    "endereco": "102, Praça XV de Novembro, 227 - Centro, Florianópolis - SC, 88010-400",
+    "telefone": null,
+    "horario": "segunda a sexta-feira das 10h às 18h. Sábado e domingo das 10h às 16h",
+    "site": "http://www.pmf.sc.gov.br/entidades/turismo/index.php?cms=palacio+cruz+e+sousa",
+    "ingressos": "R$ 5-2"
+  },
+  {
+    "id": 3,
+    "nome": "Ilha do Campeche",
+    "foto": "https://encantosdesantacatarina.com.br/wp-content/uploads/2019/05/12695152_982531628487312_1884756321_o.jpg",
+    "cidade": "Florianópolis",
+    "endereco": null,
+    "telefone": null,
+    "horario": null,
+    "site": null,
+    "ingressos": 200
+  },
+  {
+    "id": 4,
+    "nome": "Parque Vila Germânica",
+    "foto": "https://www.turismonovaledoitajai.com.br/wp-content/uploads/2016/10/vila-germanica-blumenau.jpg",
+    "cidade": "Blumenau",
+    "endereco": "R. Alberto Stein, 199 - Velha, Blumenau - SC, 89036-200",
+    "telefone": "(47) 3381-7700",
+    "horario": "Horário: 08:00 às 12:00 | 13:30 às 17:30",
+    "site": "https://www.blumenau.sc.gov.br/governo/parque-vila-germanica",
+    "ingressos": null
+  },
+  {
+    "id": 5,
+    "nome": "Praia do Rosa",
+    "foto": "https://hospedariadasbrisas.com.br/wp-content/uploads/2021/09/voce-sabe-a-origem-do-nome-praia-do-rosa.jpg",
+    "cidade": "Imbituba",
+    "endereco": "Praia do Rosa - SC.",
+    "telefone": null,
+    "horario": null,
+    "site": "https://www.praiadorosa.imb.br/",
+    "ingressos": null
+  },
+  {
+    "id": 6,
+    "nome": "Zoo Pomerode",
+    "foto": "https://lithoralnews.com.br/images/1789.jpg",
+    "cidade": "Pomerode",
+    "endereco": "Rua Hermann Weege, 180 - Centro - Pomerode - SC",
+    "telefone": "(47) 3387-2659",
+    "horario": "08:00-18:00",
+    "site": "https://www.zoopomerode.com.br/index.html",
+    "ingressos": "R$ 15-33"
+  },
+  {
+    "id": 7,
+    "nome": "Ponte Hercílio Luz",
+    "foto": "https://cflimoveis.com.br/wp-content/uploads/2020/11/img-ponte-hercilio-luz-a-reabertura-do-cartao-postal-1170x0-c-center.jpg",
+    "cidade": "Florianópolis",
+    "endereco": "Centro, Florianópolis - SC, 88010-400",
+    "telefone": null,
+    "horario": null,
+    "site": "https://www.sc.gov.br/noticias/temas/ponte-hercilio-luz",
+    "ingressos": null
+  }
+]
+
