@@ -54,23 +54,24 @@ export default class PlacesListScreen extends React.Component {
       <View style={styles.container}>
         <FlatList
           data={this.state.places}
-          keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <View>
               <View style={styles.containerImage}>
                 <Image style={styles.imageView} source={{ uri: item.foto }} />
               </View>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigate('PlacesDetails', { place: item })}
-              >
-                <View style={styles.containerTitle}>
-                  <Text style={styles.title}>{item.nome}</Text>
-                  <Text style={styles.subTitle}>- </Text>
-                  <Text> </Text>
-                  <Text style={styles.subTitle}>{item.cidade}</Text>
-                </View>
-              </TouchableOpacity>
+              <View>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => navigate('PlacesDetails', { place: item })}
+                >
+                  <View style={styles.containerTitle}>
+                    <Text style={styles.title}>{item.nome}</Text>
+                    <Text style={styles.subTitle}>- </Text>
+                    <Text> </Text>
+                    <Text style={styles.subTitle}>{item.cidade}</Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
             </View>
           )}
         />

@@ -1,5 +1,11 @@
 import * as React from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableNativeFeedback
+} from 'react-native'
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -13,12 +19,12 @@ export default class HomeScreen extends React.Component {
         <View style={styles.secondContainer}>
           <Image style={styles.logo} source={require('./assets/logo.png')} />
           <View style={styles.thirdContainer}>
-            <TouchableOpacity
+            <TouchableNativeFeedback
               style={styles.button}
               onPress={() => navigate('PlacesList')}
             >
               <Text style={styles.title}>Ver atrações turisticas</Text>
-            </TouchableOpacity>
+            </TouchableNativeFeedback>
           </View>
         </View>
       </View>
@@ -28,7 +34,7 @@ export default class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
   firstContainer: {
-    backgroundColor: '#d9ebdc',
+    backgroundColor: 'white',
     height: '100%'
   },
 
