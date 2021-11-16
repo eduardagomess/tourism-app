@@ -25,6 +25,12 @@ export default class HomeScreen extends React.Component {
             >
               <Text style={styles.title}>Ver atrações turisticas</Text>
             </TouchableNativeFeedback>
+            <TouchableNativeFeedback
+              style={styles.button}
+              onPress={() => navigate('FavoritePlaces')}
+            >
+              <Text style={styles.title}>Atrações turisticas favoritas</Text>
+            </TouchableNativeFeedback>
           </View>
         </View>
       </View>

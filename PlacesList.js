@@ -9,6 +9,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default class PlacesListScreen extends React.Component {
   static navigationOptions = {
@@ -69,6 +70,47 @@ export default class PlacesListScreen extends React.Component {
                     <Text style={styles.subTitle}>- </Text>
                     <Text> </Text>
                     <Text style={styles.subTitle}>{item.cidade}</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={async () => {
+                    const itemsRaw = await AsyncStorage.getItem('saved_items')
+                    const items = itemsRaw ? JSON.parse(itemsRaw) : []
+                    if (items.indexOf(item.nome) === -1) {
+                      items.push(item.nome)
+                      await AsyncStorage.setItem(
+                        'saved_items',
+                        JSON.stringify(items)
+                      )
+                    } else {
+                      console.log('erro')
+                    }
+                  }}
+                >
+                  <View style={styles.containerTitle}>
+                    <Text style={styles.subTitle}>Add como favorita</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={async () => {
+                    const itemsRaw = await AsyncStorage.getItem('saved_items')
+                    const items = itemsRaw ? JSON.parse(itemsRaw) : []
+                    if (items.indexOf(item.nome) > -1) {
+                      items.splice(items.indexOf(item.nome), 1)
+                      console.log(items)
+                      await AsyncStorage.setItem(
+                        'saved_items',
+                        JSON.stringify(items)
+                      )
+                    } else {
+                      console.log('erro')
+                    }
+                  }}
+                >
+                  <View style={styles.containerTitle}>
+                    <Text style={styles.subTitle}>Remover favorita</Text>
                   </View>
                 </TouchableOpacity>
               </View>

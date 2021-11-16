@@ -59,20 +59,19 @@ export default class ContactDetailsScreen extends React.Component {
           <View>
             <View style={styles.containerDetails}>
               <Image
-                style={styles.logo}
+                style={styles.placeIcon}
                 source={require('./assets/place.png')}
               />
-              <Text style={styles.informationDetails}>Endereço</Text>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    `https://www.google.com/maps/search/${endereco}`
+                  )
+                }
+              >
+                <Text style={styles.informationData}>{endereco}</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity
-              onPress={() =>
-                Linking.openURL(
-                  `https://www.google.com/maps/search/${endereco}`
-                )
-              }
-            >
-              <Text style={styles.informationData}>{endereco}</Text>
-            </TouchableOpacity>
           </View>
         )}
 
@@ -83,13 +82,12 @@ export default class ContactDetailsScreen extends React.Component {
                 style={styles.logoPhone}
                 source={require('./assets/phone.png')}
               />
-              <Text style={styles.informationDetails}>Telefone</Text>
+              <TouchableOpacity
+                onPress={() => Linking.openURL(`tel:${telefone}`)}
+              >
+                <Text style={styles.informationData}>{telefone}</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity
-              onPress={() => Linking.openURL(`tel:${telefone}`)}
-            >
-              <Text style={styles.informationData}>{telefone}</Text>
-            </TouchableOpacity>
           </View>
         )}
 
@@ -100,9 +98,8 @@ export default class ContactDetailsScreen extends React.Component {
                 style={styles.logoHour}
                 source={require('./assets/hour.png')}
               />
-              <Text style={styles.informationDetails}>Horário</Text>
+              <Text style={styles.informationData}>{horario}</Text>
             </View>
-            <Text style={styles.informationData}>{horario}</Text>
           </View>
         )}
 
@@ -113,11 +110,22 @@ export default class ContactDetailsScreen extends React.Component {
                 style={styles.logoHour}
                 source={require('./assets/site.png')}
               />
-              <Text style={styles.informationDetails}>Site</Text>
+              <TouchableOpacity onPress={() => Linking.openURL(site)}>
+                <Text style={styles.informationData}>{site}</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => Linking.openURL(site)}>
-              <Text style={styles.informationData}>{site}</Text>
-            </TouchableOpacity>
+          </View>
+        )}
+
+        {ingresso && (
+          <View>
+            <View style={styles.containerDetails}>
+              <Image
+                style={styles.logoTicket}
+                source={require('./assets/tickets.png')}
+              />
+              <Text style={styles.informationData}>{ingresso}</Text>
+            </View>
           </View>
         )}
 
@@ -131,29 +139,16 @@ export default class ContactDetailsScreen extends React.Component {
           >
             <View style={styles.containerDetails}>
               <Image
-                style={styles.logoHour}
+                style={styles.logoVideo}
                 source={require('./assets/video.png')}
               />
-              <Text style={styles.informationDetails}>Video</Text>
+              <Text style={styles.informationDetails}>Videos da atração</Text>
             </View>
           </TouchableOpacity>
         </View>
 
-        {ingresso && (
-          <View>
-            <View style={styles.containerDetails}>
-              <Image
-                style={styles.logoHour}
-                source={require('./assets/tickets.png')}
-              />
-              <Text style={styles.informationDetails}>Ingressos</Text>
-            </View>
-            <Text style={styles.informationData}>{ingresso}</Text>
-          </View>
-        )}
-
         <View style={styles.button}>
-          <Button title="Voltar" onPress={() => navigate('PlacesList')} />
+          <Button title="Voltar" onPress={() => navigate('Home')} />
         </View>
       </View>
     )
@@ -172,7 +167,8 @@ const styles = StyleSheet.create({
     height: 44,
     color: '#62926a'
   },
-  logo: {
+  placeIcon: {
+    paddingTop: 10,
     height: 30,
     width: 20
   },
@@ -183,6 +179,14 @@ const styles = StyleSheet.create({
   logoHour: {
     height: 30,
     width: 35
+  },
+  logoVideo: {
+    height: 30,
+    width: 30
+  },
+  logoTicket: {
+    height: 35,
+    width: 45
   },
   containerDetails: {
     flexDirection: 'row'
@@ -196,11 +200,10 @@ const styles = StyleSheet.create({
     color: '#4c8055'
   },
   informationData: {
-    marginBottom: 10,
+    marginBottom: 30,
     marginLeft: 10,
     fontSize: 16,
-    flexWrap: 'wrap',
-    fontWeight: 'bold'
+    flexWrap: 'wrap'
   },
   contactDetailsCidade: {
     paddingTop: 30,
