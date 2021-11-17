@@ -33,3 +33,6 @@ On the screen with the details of the tourist attraction should be considered:
 :arrow_right: Contact information from the attraction details screen – such as phone, email and website – should be clickable in order to easily access other communication applications. The application must also allow the user to view the location of the tourist attraction on Google Maps and to watch one or more videos of the location available on YouTube.
 
 :arrow_right: The application user should be able to choose as a tourist guide that he wants to visit, marking as his/her preferences. This information should be stored locally so that the user has easy access to this information whenever using the app.
+
+![app](https://user-images.githubusercontent.com/63261217/142193785-bd0c8eda-c01e-4fd7-87eb-06d165ec9e90.png)
+
