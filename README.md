@@ -1,4 +1,5 @@
 # tourism-app
+![app](https://user-images.githubusercontent.com/63261217/142193785-bd0c8eda-c01e-4fd7-87eb-06d165ec9e90.png)
 
 :iphone: **The app must show information about the various tourist attractions in the state of Santa Catarina**, such as:
 
@@ -34,5 +35,5 @@ On the screen with the details of the tourist attraction should be considered:
 
 :arrow_right: The application user should be able to choose as a tourist guide that he wants to visit, marking as his/her preferences. This information should be stored locally so that the user has easy access to this information whenever using the app.
 
-![app](https://user-images.githubusercontent.com/63261217/142193785-bd0c8eda-c01e-4fd7-87eb-06d165ec9e90.png)
+
 
