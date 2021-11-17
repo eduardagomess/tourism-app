@@ -25,7 +25,7 @@ export default class PlacesListScreen extends React.Component {
     const { navigation } = this.props
 
     this.focusListener = navigation.addListener('didFocus', () => {
-      const jsonContent = require('./places.json')
+      const jsonContent = require('../places.json')
       this.setState(
         {
           isLoading: false,
@@ -62,7 +62,6 @@ export default class PlacesListScreen extends React.Component {
               </View>
               <View>
                 <TouchableOpacity
-                  style={styles.button}
                   onPress={() => navigate('PlacesDetails', { place: item })}
                 >
                   <View style={styles.containerTitle}>
@@ -72,47 +71,56 @@ export default class PlacesListScreen extends React.Component {
                     <Text style={styles.subTitle}>{item.cidade}</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={async () => {
-                    const itemsRaw = await AsyncStorage.getItem('saved_items')
-                    const items = itemsRaw ? JSON.parse(itemsRaw) : []
-                    if (items.indexOf(item.nome) === -1) {
-                      items.push(item.nome)
-                      await AsyncStorage.setItem(
-                        'saved_items',
-                        JSON.stringify(items)
+                <View style={styles.secondContainerImage}>
+                  <TouchableOpacity
+                    onPress={async () => {
+                      const placesList = await AsyncStorage.getItem(
+                        'favoritePlaces'
                       )
-                    } else {
-                      console.log('erro')
-                    }
-                  }}
-                >
-                  <View style={styles.containerTitle}>
-                    <Text style={styles.subTitle}>Add como favorita</Text>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={async () => {
-                    const itemsRaw = await AsyncStorage.getItem('saved_items')
-                    const items = itemsRaw ? JSON.parse(itemsRaw) : []
-                    if (items.indexOf(item.nome) > -1) {
-                      items.splice(items.indexOf(item.nome), 1)
-                      console.log(items)
-                      await AsyncStorage.setItem(
-                        'saved_items',
-                        JSON.stringify(items)
+                      const items = placesList ? JSON.parse(placesList) : []
+                      if (items.indexOf(item.nome) === -1) {
+                        items.push(item.nome)
+                        await AsyncStorage.setItem(
+                          'favoritePlaces',
+                          JSON.stringify(items)
+                        )
+                      } else {
+                        console.log('error')
+                      }
+                    }}
+                  >
+                    <View style={styles.containerTitle}>
+                      <Image
+                        style={styles.likeImage}
+                        source={require('../assets/like.png')}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={async () => {
+                      const placesList = await AsyncStorage.getItem(
+                        'favoritePlaces'
                       )
-                    } else {
-                      console.log('erro')
-                    }
-                  }}
-                >
-                  <View style={styles.containerTitle}>
-                    <Text style={styles.subTitle}>Remover favorita</Text>
-                  </View>
-                </TouchableOpacity>
+                      const items = placesList ? JSON.parse(placesList) : []
+                      if (items.indexOf(item.nome) > -1) {
+                        items.splice(items.indexOf(item.nome), 1)
+                        await AsyncStorage.setItem(
+                          'favoritePlaces',
+                          JSON.stringify(items)
+                        )
+                      } else {
+                        console.log('error')
+                      }
+                    }}
+                  >
+                    <View style={styles.containerTitle}>
+                      <Image
+                        style={styles.deslikeImage}
+                        source={require('../assets/deslike.png')}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           )}
@@ -139,10 +147,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column'
   },
-  button: {
-    alignItems: 'center',
-    padding: 5
-  },
   title: {
     padding: 10,
     fontSize: 18,
@@ -153,10 +157,26 @@ const styles = StyleSheet.create({
     color: '#4c8055',
     fontSize: 18
   },
+  likeImage: {
+    marginBottom: 20,
+    width: 50,
+    height: 40
+  },
+  deslikeImage: {
+    width: 50,
+    height: 40
+  },
   containerTitle: {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     padding: 20
+  },
+  secondContainerImage: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    padding: 2,
+    marginBottom: 20
   }
 })

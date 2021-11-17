@@ -9,7 +9,7 @@ import {
   Linking
 } from 'react-native'
 
-export default class ContactDetailsScreen extends React.Component {
+export default class PlacesDetailsScreen extends React.Component {
   static navigationOptions = {
     title: 'Dados da atração'
   }
@@ -35,7 +35,6 @@ export default class ContactDetailsScreen extends React.Component {
     const {
       nome,
       foto,
-      cidade,
       descricao,
       endereco,
       telefone,
@@ -60,7 +59,7 @@ export default class ContactDetailsScreen extends React.Component {
             <View style={styles.containerDetails}>
               <Image
                 style={styles.placeIcon}
-                source={require('./assets/place.png')}
+                source={require('../assets/place.png')}
               />
               <TouchableOpacity
                 onPress={() =>
@@ -80,7 +79,7 @@ export default class ContactDetailsScreen extends React.Component {
             <View style={styles.containerDetails}>
               <Image
                 style={styles.logoPhone}
-                source={require('./assets/phone.png')}
+                source={require('../assets/phone.png')}
               />
               <TouchableOpacity
                 onPress={() => Linking.openURL(`tel:${telefone}`)}
@@ -96,7 +95,7 @@ export default class ContactDetailsScreen extends React.Component {
             <View style={styles.containerDetails}>
               <Image
                 style={styles.logoHour}
-                source={require('./assets/hour.png')}
+                source={require('../assets/hour.png')}
               />
               <Text style={styles.informationData}>{horario}</Text>
             </View>
@@ -108,7 +107,7 @@ export default class ContactDetailsScreen extends React.Component {
             <View style={styles.containerDetails}>
               <Image
                 style={styles.logoHour}
-                source={require('./assets/site.png')}
+                source={require('../assets/site.png')}
               />
               <TouchableOpacity onPress={() => Linking.openURL(site)}>
                 <Text style={styles.informationData}>{site}</Text>
@@ -122,7 +121,7 @@ export default class ContactDetailsScreen extends React.Component {
             <View style={styles.containerDetails}>
               <Image
                 style={styles.logoTicket}
-                source={require('./assets/tickets.png')}
+                source={require('../assets/tickets.png')}
               />
               <Text style={styles.informationData}>{ingresso}</Text>
             </View>
@@ -140,7 +139,7 @@ export default class ContactDetailsScreen extends React.Component {
             <View style={styles.containerDetails}>
               <Image
                 style={styles.logoVideo}
-                source={require('./assets/video.png')}
+                source={require('../assets/video.png')}
               />
               <Text style={styles.informationDetails}>Videos da atração</Text>
             </View>

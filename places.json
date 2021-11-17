@@ -9,8 +9,7 @@
     "telefone": "(47) 3261-2222",
     "horario": "09:00-21:00",
     "site": "https://www.betocarrero.com.br/",
-    "ingresso": "R$ 129-189",
-    "fav": false
+    "ingresso": "R$ 129-189"
   },
   {
     "id": 2,
@@ -22,8 +21,7 @@
     "telefone": null,
     "horario": "segunda a sexta-feira das 10h às 18h. Sábado e domingo das 10h às 16h",
     "site": "http://www.pmf.sc.gov.br/entidades/turismo/index.php?cms=palacio+cruz+e+sousa",
-    "ingresso": "R$ 5-2",
-    "fav": false
+    "ingresso": "R$ 5-2"
   },
   {
     "id": 3,
@@ -35,8 +33,7 @@
     "telefone": null,
     "horario": null,
     "site": null,
-    "ingresso": "R$ 200",
-    "fav": false
+    "ingresso": "R$ 200"
   },
   {
     "id": 4,
@@ -48,8 +45,7 @@
     "telefone": "(47) 3381-7700",
     "horario": "08:00 às 12:00 | 13:30 às 17:30",
     "site": "https://www.blumenau.sc.gov.br/governo/parque-vila-germanica",
-    "ingresso": null,
-    "fav": false
+    "ingresso": null
   },
   {
     "id": 5,
@@ -61,8 +57,7 @@
     "telefone": null,
     "horario": null,
     "site": "https://www.praiadorosa.imb.br/",
-    "ingresso": null,
-    "fav": false
+    "ingresso": null
   },
   {
     "id": 6,
@@ -74,8 +69,7 @@
     "telefone": "(47) 3387-2659",
     "horario": "08:00-18:00",
     "site": "https://www.zoopomerode.com.br/index.html",
-    "ingressos": "R$ 15-33",
-    "fav": false
+    "ingressos": "R$ 15-33"
   },
   {
     "id": 7,
@@ -87,8 +81,7 @@
     "telefone": null,
     "horario": null,
     "site": "https://www.sc.gov.br/noticias/temas/ponte-hercilio-luz",
-    "ingressos": null,
-    "fav": false
+    "ingressos": null
   }
 ]
 

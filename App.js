@@ -2,16 +2,15 @@ import * as React from 'react'
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 
-import HomeScreen from './Home'
-import PlacesListScreen from './PlacesList'
-import ContactDetailsScreen from './PlacesDetails'
-import FavPlacesListScreen from './FavoritePlaces'
+import HomeScreen from './screens/Home.js'
+import PlacesListScreen from './screens/PlacesList'
+import PlacesDetailsScreen from './screens/PlacesDetails'
+import FavPlacesListScreen from './screens/FavoritePlaces'
 
 const MainNavigator = createStackNavigator({
   Home: { screen: HomeScreen },
   PlacesList: { screen: PlacesListScreen },
-  // nome do arquivo
-  PlacesDetails: { screen: ContactDetailsScreen },
+  PlacesDetails: { screen: PlacesDetailsScreen },
   FavoritePlaces: { screen: FavPlacesListScreen }
 })
 

@@ -11,7 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default class FavPlacesListScreen extends React.Component {
   static navigationOptions = {
-    title: 'Fav'
+    title: 'Atrações favoritas'
   }
 
   constructor(props) {
@@ -23,7 +23,7 @@ export default class FavPlacesListScreen extends React.Component {
     const { navigation } = this.props
 
     this.focusListener = navigation.addListener('didFocus', async () => {
-      const value = await AsyncStorage.getItem('saved_items')
+      const value = await AsyncStorage.getItem('favoritePlaces')
       this.setState(
         {
           isLoading: false,
