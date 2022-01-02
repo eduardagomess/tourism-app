@@ -17,7 +17,7 @@
 
 **Technologies**
 
-:arrow_forward: ***Frontend*** - React Native
+:arrow_forward: React Native
 
 **Run**
 
