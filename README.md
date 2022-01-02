@@ -1,39 +1,40 @@
 # tourism-app
 ![app](https://user-images.githubusercontent.com/63261217/142193785-bd0c8eda-c01e-4fd7-87eb-06d165ec9e90.png)
 
-:iphone: **The app must show information about the various tourist attractions in the state of Santa Catarina**, such as:
+**Description**
+
+:pushpin: The app must show information about the various tourist attractions in the state of Santa Catarina, such as:
 
 - reserves and ecological parks;
 - historic buildings and monuments;
 - amusement parks, event centers, shopping centers, etc.
 
-The application must have the following screens:
+:pushpin: The application have the following screens:
 
-:pushpin: a home screen
+- a home screen
+- a screen with a list of all tourist attractions;
+- a screen that shows the detailed data of a tourist attraction chosen in the previous screen.
 
-:pushpin: a screen with a list of all tourist attractions;
+**Technologies**
 
-:pushpin: a screen that shows the detailed data of a tourist attraction chosen in the previous screen.
+:arrow_forward: ***Frontend*** - React 
 
-**obs:** The screen with the list of tourist attractions must include an image (logo or photo) and the city in which it is located.
+**Run**
 
-On the screen with the details of the tourist attraction should be considered:
+1) Install npm, Node.js, git, and expo (https://docs.expo.dev/get-started/installation/).
 
-- name of attraction;
-- one or more photos;
-- address;
-- telephone;
-- opening hours;
-- website and / or email;
-- ticket prices.
+2) Download the Expo app on your phone and create an account to see the app running
 
-:pushpin: This screen must be created in such a way as to be populated with attraction data by the user 
+3) Clone the repository (git clone https://github.com/eduardagomess/tourism-app.git)
 
-:arrow_right: The data used by the app can be stored locally or on a remote server, in JSON or XML format. Adopt a strategy that seems most appropriate to allow you to update data and at the same time avoid unnecessary network access
+4) Through the command line, go to the project folder (tourism-app) and execute the following command 'npm install'
 
-:arrow_right: Contact information from the attraction details screen – such as phone, email and website – should be clickable in order to easily access other communication applications. The application must also allow the user to view the location of the tourist attraction on Google Maps and to watch one or more videos of the location available on YouTube.
+5) To see the app working:
+- go to the tourism-app folder and run the command 'expo start' 
 
-:arrow_right: The application user should be able to choose as a tourist guide that he wants to visit, marking as his/her preferences. This information should be stored locally so that the user has easy access to this information whenever using the app.
+6) After the above command, use your  phone camera to read de QRcode to open the app on your phone
+
+At the end of these steps, the app will be working in the expo app and ready to be tested!
 
 
 
