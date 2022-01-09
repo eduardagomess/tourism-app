@@ -1,36 +1,29 @@
 import * as React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
-export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Home'
-  }
-
-  render() {
-    const { navigate } = this.props.navigation
-    return (
-      <View style={styles.firstContainer}>
-        <View style={styles.secondContainer}>
-          <Image style={styles.logo} source={require('../assets/logo.png')} />
-          <View style={styles.thirdContainer}>
-            <TouchableOpacity onPress={() => navigate('PlacesList')}>
-              <Text style={styles.title}>Ver atrações turísticas</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.fourthContainer}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => navigate('FavoritePlaces')}
-            >
-              <Text style={styles.buttonTitle}>
-                Atrações turísticas favoritas
-              </Text>
-            </TouchableOpacity>
-          </View>
+function HomeScreen({ navigation }) {
+  return (
+    <View style={styles.firstContainer}>
+      <View style={styles.secondContainer}>
+        <Image style={styles.logo} source={require('../assets/logo.png')} />
+        <View style={styles.thirdContainer}>
+          <TouchableOpacity onPress={() => navigation.navigate('Atrações')}>
+            <Text style={styles.title}>Ver atrações turísticas</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.fourthContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('Atrações favoritas')}
+          >
+            <Text style={styles.buttonTitle}>
+              Atrações turísticas favoritas
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
-    )
-  }
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -82,3 +75,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#417049'
   }
 })
+
+export default HomeScreen

@@ -1,68 +1,33 @@
-import * as React from 'react'
-import {
-  View,
-  Text,
-  ActivityIndicator,
-  StyleSheet,
-  FlatList,
-  Button
-} from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { View, Text, StyleSheet, FlatList, Button } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-export default class FavPlacesListScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Atrações favoritas'
-  }
+export default function FavPlacesListScreen({ navigation }) {
+  const [places, setPlaces] = useState([])
 
-  constructor(props) {
-    super(props)
-    this.state = { isLoading: true }
-  }
-
-  componentDidMount() {
-    const { navigation } = this.props
-
-    this.focusListener = navigation.addListener('didFocus', async () => {
+  useEffect(() => {
+    const fetchData = async () => {
       const value = await AsyncStorage.getItem('favoritePlaces')
-      this.setState(
-        {
-          isLoading: false,
-          places: JSON.parse(value)
-        },
-        function () {}
-      )
-    })
-  }
-
-  componentWillUnmount() {
-    this.focusListener.remove()
-  }
-
-  render() {
-    if (this.state.isLoading) {
-      return (
-        <View style={{ flex: 1, padding: 20 }}>
-          <ActivityIndicator />
-        </View>
-      )
+      setPlaces(JSON.parse(value))
     }
-    const { navigate } = this.props.navigation
-    return (
-      <View>
-        <FlatList
-          data={this.state.places}
-          renderItem={({ item }) => (
+    fetchData()
+  }, [])
+
+  return (
+    <View>
+      <FlatList
+        data={places}
+        renderItem={({ item }) => (
+          <View>
             <View>
-              <View>
-                <Text style={styles.title}> {item}</Text>
-              </View>
+              <Text style={styles.title}> {item}</Text>
             </View>
-          )}
-        />
-        <Button title="Voltar" onPress={() => navigate('Home')} />
-      </View>
-    )
-  }
+          </View>
+        )}
+      />
+      <Button title="Voltar" onPress={() => navigation.navigate('Home')} />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
